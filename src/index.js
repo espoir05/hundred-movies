@@ -1,7 +1,16 @@
 import './default.css';
+import Layout from './Layout';
+import SearchScreen from './Search';
+import FavorisScreen from './Favoris';
 
-import Greetings from './Greetings.js';
+const body = document.getElementsByTagName('body')[0];
 
-const greetings = new Greetings('taha');
+const searchScreen = new SearchScreen();
+const favorisScreen = new FavorisScreen();
 
-console.log(greetings.write());
+const layout = new Layout(body, {
+  search: searchScreen.render(),
+  favoris: favorisScreen.render(),
+});
+
+layout.render();
