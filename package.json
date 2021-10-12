@@ -1,0 +1,10 @@
+{
+  "name": "hundred",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "taha.amine <taha.amine@cdbdx.biz>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.58.1"
+  }
+}
