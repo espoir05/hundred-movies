@@ -3,7 +3,5 @@ export default class Greetings {
     this.name = name;
   }
 
-  write = () => {
-    return `greetings ${this.name}`;
-  };
+  write = () => `greetings ${this.name}`;
 }

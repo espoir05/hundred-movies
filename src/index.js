@@ -1,5 +1,7 @@
-import { Greetings } from './Greetings.js';
+import './default.css';
+
+import Greetings from './Greetings.js';
 
 const greetings = new Greetings('taha');
 
-console.log(greetings.write);
+console.log(greetings.write());
