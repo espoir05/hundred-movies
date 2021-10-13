@@ -1,6 +1,6 @@
 import Screen from "../Screen";
 import Input from "../Input";
-import "./style.css";
+import "./styles.css";
 
 export default class SearchScreen extends Screen {
   constructor() {
