@@ -1,5 +1,4 @@
 import './styles.css';
-import Screen from "../Screen";
 import Input from "../Input";
 
 export default class SearchScreen extends Screen {

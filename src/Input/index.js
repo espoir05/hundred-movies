@@ -1,5 +1,4 @@
 import './styles.css';
-import { ImportsNotUsedAsValues } from "typescripte";
 
 export default class Input {
     constructor(props) {
@@ -7,20 +6,38 @@ export default class Input {
     }
 
     render() {
-        const wrapper = document.createElement("div");
+        this.wrapper = document.createElement("div");
 
         const input = document.createElement("input");
         input.setAttribute("type", "text");
         input.classList.add("search");
 
-        const clear = document.createElement("button");
-        clear.classList.add("clear");
-        const cleartext = document.createTextNode("X");
-        clear.appendChild(cleartext);
+        input.addEventListener("keyup", (event) => {
+            input.value = input.value.trim();
+            const hasValue = input.value.length > 0;
 
-        wrapper.appendChild(input);
-        wrapper.appendChild(clear);
+            hasValue
+                ? this.displayClearButton()
+                : this.hideClearButton();
+        })
 
-        return wrapper;
+        this.wrapper.appendChild(input);
+
+        return this.wrapper;
+    }
+
+    displayClearButton() {
+        if (document.getElementById("clear") === null) {
+            this.clear = document.createElement("button");
+            this.clear.classList.add("id", "clear");
+            const cleartext = document.createTextNode("X");
+            clear.appendChild(cleartext);
+
+            this.wrapper.appendChild(clear);
+        }
+    }
+
+    hideClearButton() {
+        this.clear?.remove();
     }
 }
