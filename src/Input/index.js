@@ -36,7 +36,7 @@ export default class Input {
             this.clear = document.createElement("button");
             this.clear.setAttribute("id", "clear");
             this.clear.classList.add("clear");
-            const cleartext = document.createTextNode("X");
+            const cleartext = document.createTextNode("✖️");
             this.clear.appendChild(cleartext);
 
             this.wrapper.appendChild(this.clear);
