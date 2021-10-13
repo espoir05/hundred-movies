@@ -14,7 +14,7 @@ export default class Input {
         this.input.classList.add(title);
 
         document.addEventListener("keyup", (event) => {
-            const inputValue = event.target.value.trim();
+            const inputValue = this.input.value.trim();
             this.props.onChange(inputValue);
             inputValue.length > 0
                 ? this.displayClearButton()
