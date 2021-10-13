@@ -1,3 +1,6 @@
+import './styles.css';
+import Screen from "../Screen";
+
 export default class Screen {
   constructor(props) {
     this.props = props;

@@ -1,4 +1,6 @@
+import './theme.css';
 import './default.css';
+
 import Layout from './Layout';
 import SearchScreen from './Search';
 import FavorisScreen from './Favoris';
