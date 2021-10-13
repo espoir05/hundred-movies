@@ -1,13 +1,9 @@
-.left-column {
-  /*background-color: red;*/
-}
-
-.right-column {
-  /*background-color: blue;*/
-}
-
 .column {
   width: 50%;
   display: inline-block;
   height: 20px;
+}
+
+:root {
+  --light-border-color: darkgrey;
 }
