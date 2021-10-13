@@ -26,18 +26,27 @@ export default class Input {
         return this.wrapper;
     }
 
+    handleClearClick = () => {
+        this.input.value = "";
+        this.hideClearButton();
+    }
+
     displayClearButton() {
         if (document.getElementById("clear") === null) {
             this.clear = document.createElement("button");
-            this.clear.classList.add("id", "clear");
+            this.clear.setAttribute("id", "clear");
+            this.clear.classList.add("clear");
             const cleartext = document.createTextNode("X");
-            clear.appendChild(cleartext);
+            this.clear.appendChild(cleartext);
 
-            this.wrapper.appendChild(clear);
+            this.wrapper.appendChild(this.clear);
+
+            this.clear.addEventListener("click", this.handleClearClick);
         }
     }
 
     hideClearButton() {
+        this.clear?.removeEventListener("click", this.handleClearClick)
         this.clear?.remove();
     }
 }
