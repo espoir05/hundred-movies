@@ -11,7 +11,8 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --open --config webpack.dev.js",
     "prepare":"husky install",
-    "format": "prettier --write '**/*.{css,html,js,json,md}'"
+    "format": "prettier --write '**/*.{css,html,js,json,md}'",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "*.{css,html,js,json,md}": "prettier --write"
