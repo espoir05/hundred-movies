@@ -1,14 +1,11 @@
-import './styles.css';
+import Screen from "../Screen";
 import Input from "../Input";
+import "./style.css";
 
 export default class SearchScreen extends Screen {
   constructor() {
+    const input = new Input({ title: "search" });
 
-    const content = document.createElement("div");
-    const input = new Input();
-
-    content.appendChild(input.render());
-
-    super({ title: "Search", children: content });
+    return super({ title: "Search", children: input.render() });
   }
 }
