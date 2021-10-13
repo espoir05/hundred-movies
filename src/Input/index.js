@@ -1,4 +1,4 @@
-import './styles.css';
+import "./styles.css";
 
 export default class Input {
     constructor(props) {
@@ -6,29 +6,23 @@ export default class Input {
     }
 
     render() {
-        this.wrapper = document.createElement("div");
+        const { title } = this.props;
 
-        const input = document.createElement("input");
-        input.setAttribute("type", "text");
-        input.classList.add("search");
+        this.content = document.createElement("div");
+        this.input = document.createElement("input");
+        this.input.setAttribute("type", "text");
+        this.input.classList.add(title);
 
-        input.addEventListener("keyup", (event) => {
-            input.value = input.value.trim();
-            const hasValue = input.value.length > 0;
-
-            hasValue
+        document.addEventListener("keyup", (event) => {
+            const inputValue = event.target.value.trim();
+            inputValue.length > 0
                 ? this.displayClearButton()
                 : this.hideClearButton();
-        })
+        });
 
-        this.wrapper.appendChild(input);
+        this.content.appendChild(this.input);
 
-        return this.wrapper;
-    }
-
-    handleClearClick = () => {
-        this.input.value = "";
-        this.hideClearButton();
+        return this.content;
     }
 
     displayClearButton() {
@@ -36,17 +30,21 @@ export default class Input {
             this.clear = document.createElement("button");
             this.clear.setAttribute("id", "clear");
             this.clear.classList.add("clear");
-            const cleartext = document.createTextNode("✖️");
-            this.clear.appendChild(cleartext);
+            const clearText = document.createTextNode("✖️");
 
-            this.wrapper.appendChild(this.clear);
+            this.clear.appendChild(clearText);
+            this.clear.addEventListener("click", () => this.handleClearClick());
 
-            this.clear.addEventListener("click", this.handleClearClick);
+            this.content.appendChild(this.clear);
         }
     }
+    handleClearClick = () => {
+        this.input.value = "";
+        this.hideClearButton();
+    };
 
     hideClearButton() {
-        this.clear?.removeEventListener("click", this.handleClearClick)
+        this.clear?.removeEventListener("click", () => this.handleClearClick());
         this.clear?.remove();
     }
 }
